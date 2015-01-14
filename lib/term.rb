@@ -1,6 +1,7 @@
 class Term
 
   @@term = []
+  @@show_words = []
 
   define_method(:initialize) do |term, description|
     @term = term
@@ -13,6 +14,10 @@ class Term
 
   define_singleton_method(:clear) do
     @@term = []
+  end
+
+  define_singleton_method(:show_all) do
+    @@term
   end
 
 end
