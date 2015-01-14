@@ -20,6 +20,14 @@ describe(Term) do
     end
   end
 
+  describe('#show_term') do
+    it('shows a term') do
+      new_term = Term.new("apple", "red")
+      new_term.save()
+      expect(new_term.show_term()).to(eq("apple"))
+    end
+  end
+
   describe('#show_all') do
     it('shows all the terms') do
       new_term1 = Term.new("apple", "a red delicious edible")
@@ -27,6 +35,16 @@ describe(Term) do
       new_term2 = Term.new("orange", "an orange delicious edibe")
       new_term2.save()
       expect(Term.show_all()).to(eq([[new_term1], [new_term2]]))
+    end
+  end
+
+  describe('#show_words') do
+    it('shows a list of all the words') do
+      new_term1 = Term.new("apple", "a red delicious edible")
+      new_term1.save()
+      new_term2 = Term.new("orange", "an orange delicious edibe")
+      new_term2.save()
+      expect(Term.show_words()).to(eq(["apple", "orange"]))
     end
   end
 end
