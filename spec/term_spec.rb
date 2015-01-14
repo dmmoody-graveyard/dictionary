@@ -28,6 +28,14 @@ describe(Term) do
     end
   end
 
+  describe('#show_definition') do
+    it('shows a definition for a term') do
+      new_term = Term.new('apple', 'red')
+      new_term.save()
+      expect(new_term.show_definition()).to(eq('red'))
+    end
+  end
+
   describe('#show_all') do
     it('shows all the terms') do
       new_term1 = Term.new("apple", "a red delicious edible")

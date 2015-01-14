@@ -23,6 +23,10 @@ class Term
     @term
   end
 
+  define_method(:show_definition) do
+    @description
+  end
+
   define_singleton_method(:show_words) do
     all_terms = []
     @@terms.each() do |object|
