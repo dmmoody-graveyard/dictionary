@@ -20,6 +20,14 @@ describe(Term) do
     end
   end
 
+  describe('#search') do
+    it('searches for a term') do
+      new_term = Term.new("apple", "red")
+      new_term.save()
+      expect(Term.search('apple')).to(eq(new_term))
+    end
+  end
+
   describe('#show_term') do
     it('shows a term') do
       new_term = Term.new("apple", "red")

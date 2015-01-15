@@ -11,6 +11,15 @@ class Term
     @@terms.push([self])
   end
 
+  define_singleton_method(:search) do |term|
+    index = nil
+    @@terms.each() do |object|
+      index = object[0].index(object)
+      # found = @@terms.at(index)
+    end
+    index
+  end
+
   define_singleton_method(:clear) do
     @@terms = []
   end
